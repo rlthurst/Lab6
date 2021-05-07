@@ -71,7 +71,6 @@ class JournalEntry extends HTMLElement {
     /* 
      * TODO: set the entry title, date, and content fields in this component
      */
-
     // <h2 class="entry-title">
     this.shadowRoot.children[1].children[0].textContent = entry.title;
     // <p class="entry-date">
@@ -89,11 +88,11 @@ class JournalEntry extends HTMLElement {
        */
 
       // CODE GOES HERE vvv
-
-
-
-
-
+      entryImage = document.createElement("img");
+      entryImage.src = entry.image.src;
+      entryImage.alt = entry.image.alt;
+      entryImage.className = "entry-image";
+      this.shadowRoot.children[1].appendChild(entryImage);
       // CODE GOES HERE ^^^
 
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
@@ -115,12 +114,11 @@ class JournalEntry extends HTMLElement {
        */
 
       // CODE GOES HERE vvv
-
-
-
-
-
-
+      entryAudio = document.createElement("audio");
+      entryAudio.src = entry.audio;
+      entryAudio.controls = true;
+      entryAudio.className = "entry-audio";
+      this.shadowRoot.children[1].appendChild(entryAudio);
       // CODE GOES HERE ^^^
       
 
